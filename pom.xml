@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.pfalabs.scala-osgi-trials</groupId>
+    <artifactId>scala-osgi-trials-parent</artifactId>
+    <name>Scala Osgi Trials Parent</name>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+        <encoding>UTF-8</encoding>
+        <scala.version>2.10.2</scala.version>
+    </properties>
+    <modules>
+        <module>tiny-filter</module>
+    </modules>
+</project>
