@@ -19,7 +19,8 @@ Now you'll be looking at the Gogo shell (_g!_), this will allow us to bootstrap 
 
 I'm now going to install everything needed to get an HTTP Container and the [WebConsole](https://felix.apache.org/documentation/subprojects/apache-felix-web-console.html) running.
 
-```
+
+```bash
 # file-install (for good measure)
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.fileinstall/3.2.8/org.apache.felix.fileinstall-3.2.8.jar
 
@@ -34,10 +35,11 @@ start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/s
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/3.0.2/org.apache.sling.commons.log-3.0.2.jar
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.logservice/1.0.2/org.apache.sling.commons.logservice-1.0.2.jar
 
-# http (this you have to build for yourself at the moment)
+# http service 
 
-svn co http://svn.apache.org/repos/asf/felix/trunk/http felix-http
-cd felix-http; mvn clean install; cd ../
+# (this you'll have to build for yourself at the moment)
+# svn co http://svn.apache.org/repos/asf/felix/trunk/http felix-http
+# cd felix-http; mvn clean install; cd ../
 
 start file:../felix-http/servlet-api/target/org.apache.felix.http.servlet-api-0.0.1-SNAPSHOT.jar
 start file:../felix-http/api/target/org.apache.felix.http.api-2.3.0-SNAPSHOT.jar
@@ -62,7 +64,7 @@ start http://search.maven.org/remotecontent?filepath=org/scala-lang/scala-librar
 Sub-projects
 ------------
 
-  - tiny-filter
+  - [tiny-filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
 
 License
 -------
