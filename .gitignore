@@ -1,0 +1,26 @@
+# Eclipse specific
+.metadata/
+.settings/
+.scala_dependencies
+.classpath
+.project
+.cache
+
+# Project specific
+*.log
+target/
+.log
+.git
+
+# IDEA Ignores
+*.iml
+*.ipr
+*.iws
+.idea/
+local.properties
+
+
+# temp ignores!
+m3
+ops-control
+.DS_Store

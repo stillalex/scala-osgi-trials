@@ -14,5 +14,7 @@
     </properties>
     <modules>
         <module>tiny-filter</module>
+        <module>shapeless-helper</module>
+        <!-- module>tiny-spray</module -->
     </modules>
 </project>

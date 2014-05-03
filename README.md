@@ -11,9 +11,9 @@ Here you'll find some info how you can build a running Apache Felix system
 with all the basics you need for Scala.
 
 First download an [Apache Felix distribution](https://felix.apache.org/downloads.cgi), 
-for this we're currently using _4.2.1_, [unzip and run](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html):
+for this we're currently using _4.4.0_, [unzip and run](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html):
 
-    cd felix-framework-4.2.1; java -jar bin/felix.jar
+    cd felix-framework-4.4.0; java -jar bin/felix.jar
 
 Now you'll be looking at the Gogo shell (_g!_), this will allow us to bootstrap a simple OSGi container with the bundles we're interested in.
 
@@ -38,7 +38,7 @@ start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache
 # http service 
 
 # (this you'll have to build for yourself at the moment)
-# svn co http://svn.apache.org/repos/asf/felix/trunk/http felix-http
+# svn co https://svn.apache.org/repos/asf/felix/trunk/http felix-http
 # cd felix-http; mvn clean install; cd ../
 
 start file:../felix-http/servlet-api/target/org.apache.felix.http.servlet-api-0.0.1-SNAPSHOT.jar
@@ -58,13 +58,14 @@ start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.scr/1.8.2/org.apache.felix.scr-1.8.2.jar
 
 # scala
-start http://search.maven.org/remotecontent?filepath=org/scala-lang/scala-library/2.10.3/scala-library-2.10.3.jar
+start http://search.maven.org/remotecontent?filepath=org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.jar
 ```
 
 Sub-projects
 ------------
 
   - [tiny-filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
+  - [tiny-spray](/tiny-spray) an example of a basic Spray based app.
 
 License
 -------
