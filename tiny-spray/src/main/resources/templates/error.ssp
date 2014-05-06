@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+  <head>
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <h2>Oups, something happened.</h2>
+  </body>
+</html>

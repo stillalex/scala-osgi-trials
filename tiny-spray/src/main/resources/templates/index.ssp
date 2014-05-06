@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tiny Spray page</title>
+    <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+    <h1>Say hello to <i>spray-routing</i> on <i>Jetty</i>!</h1>
+  </body>
+</html>
