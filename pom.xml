@@ -2,7 +2,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pfalabs.scala-osgi-trials</groupId>
-    <artifactId>scala-osgi-trials-parent</artifactId>
+    <artifactId>scala-osgi-trials-parent_2.11</artifactId>
     <name>Scala Osgi Trials Parent</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -10,11 +10,11 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <scala.version>2.10.2</scala.version>
+        <scala.version>2.11.0</scala.version>
     </properties>
     <modules>
         <module>tiny-filter</module>
         <module>shapeless-helper</module>
-        <!-- module>tiny-spray</module -->
+        <module>tiny-spray</module>
     </modules>
 </project>

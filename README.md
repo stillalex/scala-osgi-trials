@@ -31,9 +31,9 @@ start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.eventadmin/1.3.2/org.apache.felix.eventadmin-1.3.2.jar
 
 # logs
-start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar
-start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/3.0.2/org.apache.sling.commons.log-3.0.2.jar
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.logservice/1.0.2/org.apache.sling.commons.logservice-1.0.2.jar
+start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/3.0.2/org.apache.sling.commons.log-3.0.2.jar
+start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar
 
 # http service 
 
@@ -58,7 +58,8 @@ start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.scr/1.8.2/org.apache.felix.scr-1.8.2.jar
 
 # scala
-start http://search.maven.org/remotecontent?filepath=org/scala-lang/scala-library/2.10.4/scala-library-2.10.4.jar
+start http://search.maven.org/remotecontent?filepath=org/scala-lang/scala-library/2.11.0/scala-library-2.11.0.jar
+
 ```
 
 Sub-projects
