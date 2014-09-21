@@ -30,10 +30,12 @@ start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache
 # event admin (needed by http/jetty)
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.eventadmin/1.4.2/org.apache.felix.eventadmin-1.4.2.jar
 
-# logs
-start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/3.0.2/org.apache.sling.commons.log-3.0.2.jar
-start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar
+# logging support
+start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/4.0.0/org.apache.sling.commons.log-4.0.0.jar
+start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.7.7/slf4j-api-1.7.7.jar
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.logservice/1.0.2/org.apache.sling.commons.logservice-1.0.2.jar
+start http://search.maven.org/remotecontent?filepath=org/slf4j/log4j-over-slf4j/1.7.7/log4j-over-slf4j-1.7.7.jar
+start http://search.maven.org/remotecontent?filepath=org/slf4j/jcl-over-slf4j/1.7.7/jcl-over-slf4j-1.7.7.jar
 
 # http service
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.http.servlet-api/1.0.0/org.apache.felix.http.servlet-api-1.0.0.jar
