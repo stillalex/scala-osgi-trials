@@ -11,9 +11,9 @@ Here you'll find some info how you can build a running Apache Felix system
 with all the basics you need for Scala.
 
 First download an [Apache Felix distribution](https://felix.apache.org/downloads.cgi), 
-for this we're currently using _4.4.0_, [unzip and run](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html):
+for this we're currently using _4.4.1_, [unzip and run](https://felix.apache.org/documentation/subprojects/apache-felix-framework/apache-felix-framework-usage-documentation.html):
 
-    cd felix-framework-4.4.0; java -jar bin/felix.jar
+    cd felix-framework-4.4.1; java -jar bin/felix.jar
 
 Now you'll be looking at the Gogo shell (_g!_), this will allow us to bootstrap a simple OSGi container with the bundles we're interested in.
 
@@ -21,30 +21,25 @@ I'm now going to install everything needed to get an HTTP Container and the [Web
 
 
 ```bash
-# file-install (for good measure)
-start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.fileinstall/3.2.8/org.apache.felix.fileinstall-3.2.8.jar
+# file install (for good measure)
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.fileinstall/3.4.2/org.apache.felix.fileinstall-3.4.2.jar
 
-# config-admin
+# config admin (needed by http/jetty)
 start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.configadmin/1.8.0/org.apache.felix.configadmin-1.8.0.jar
 
-# event admin
-start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.eventadmin/1.3.2/org.apache.felix.eventadmin-1.3.2.jar
+# event admin (needed by http/jetty)
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.eventadmin/1.4.2/org.apache.felix.eventadmin-1.4.2.jar
 
 # logs
-start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.log/3.0.2/org.apache.sling.commons.log-3.0.2.jar
+start http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-api/1.6.4/slf4j-api-1.6.4.jar
 start http://search.maven.org/remotecontent?filepath=org/apache/sling/org.apache.sling.commons.logservice/1.0.2/org.apache.sling.commons.logservice-1.0.2.jar
 
-# http service 
-
-# (this you'll have to build for yourself at the moment)
-# svn co https://svn.apache.org/repos/asf/felix/trunk/http felix-http
-# cd felix-http; mvn clean install; cd ../
-
-start file:../felix-http/servlet-api/target/org.apache.felix.http.servlet-api-0.0.1-SNAPSHOT.jar
-start file:../felix-http/api/target/org.apache.felix.http.api-2.3.0-SNAPSHOT.jar
-start file:../felix-http/jetty/target/org.apache.felix.http.jetty-2.3.0-SNAPSHOT.jar
-start file:../felix-http/whiteboard/target/org.apache.felix.http.whiteboard-2.3.0-SNAPSHOT.jar
+# http service
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.http.servlet-api/1.0.0/org.apache.felix.http.servlet-api-1.0.0.jar
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.http.api/2.3.0/org.apache.felix.http.api-2.3.0.jar
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.http.jetty/2.3.0/org.apache.felix.http.jetty-2.3.0.jar
+start http://search.maven.org/remotecontent?filepath=org/apache/felix/org.apache.felix.http.whiteboard/2.3.0/org.apache.felix.http.whiteboard-2.3.0.jar
 
 # webconsole
 start http://search.maven.org/remotecontent?filepath=commons-io/commons-io/2.4/commons-io-2.4.jar
