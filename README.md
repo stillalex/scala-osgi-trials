@@ -72,6 +72,7 @@ Sub-projects
   - [tiny-filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
   - [tiny-akka-http](/tiny-akka-http) an example of a basic Akka Http based app.
   - [tiny-akka-http-launcher](/tiny-akka-http-launcher) a demo launchpad for [tiny-akka-http](/tiny-akka-http).
+  - [tiny-oak](/tiny-oak) an interesting experiment with [Apache Oak](http://jackrabbit.apache.org/oak).
 
 License
 -------
