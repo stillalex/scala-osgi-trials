@@ -63,6 +63,7 @@ Sub-projects
 
   - [tiny-filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
   - [tiny-spray](/tiny-spray) an example of a basic Spray based app.
+  - [tiny-oak](/tiny-oak) an interesting experiment with [Apache Oak](http://jackrabbit.apache.org/oak).
 
 License
 -------
