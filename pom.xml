@@ -6,15 +6,11 @@
     <name>Scala Osgi Trials Parent</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <properties>
-        <maven.compiler.source>1.6</maven.compiler.source>
-        <maven.compiler.target>1.6</maven.compiler.target>
-        <encoding>UTF-8</encoding>
-        <scala.version>2.11.0</scala.version>
-    </properties>
     <modules>
         <module>tiny-filter</module>
         <module>shapeless-helper</module>
         <module>tiny-spray</module>
+        <module>tiny-akka-http</module>
+        <module>tiny-akka-http-launcher</module>
     </modules>
 </project>
