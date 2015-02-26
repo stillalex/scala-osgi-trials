@@ -8,9 +8,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>tiny-filter</module>
-        <module>shapeless-helper</module>
-        <module>tiny-spray</module>
         <module>tiny-akka-http</module>
         <module>tiny-akka-http-launcher</module>
+        <module>tiny-oak</module>
+        <module>tiny-oak-launcher</module>
     </modules>
 </project>

@@ -9,7 +9,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <scala.version>2.10.4</scala.version>
+        <scala.version>2.11.5</scala.version>
     </properties>
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
@@ -113,14 +113,14 @@
         </dependency>
         <dependency>
             <groupId>com.pfalabs</groupId>
-            <artifactId>com.pfalabs.soak</artifactId>
-            <version>0.0.2</version>
+            <artifactId>com.pfalabs.soak_2.11</artifactId>
+            <version>0.0.3-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.jackrabbit</groupId>
             <artifactId>oak-core</artifactId>
-            <version>1.0.5</version>
+            <version>1.1.6</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

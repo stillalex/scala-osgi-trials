@@ -21,7 +21,7 @@ import com.google.common.io.Closer
 
 @Component(immediate = true, metatype = false, specVersion = "1.2")
 @Service(value = Array(classOf[Filter]))
-@Properties(Array(new Property(name = "pattern", value = Array("/tiny"))))
+@Properties(Array(new Property(name = "pattern", value = Array("/tinyoak"))))
 class Tiny extends Filter {
 
   val log: Logger = LoggerFactory.getLogger(classOf[Tiny])
