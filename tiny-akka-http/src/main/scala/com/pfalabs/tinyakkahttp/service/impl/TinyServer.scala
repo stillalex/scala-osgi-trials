@@ -1,20 +1,23 @@
 package com.pfalabs.tinyakkahttp.service.impl
 
+import scala.concurrent.Future
+
 import org.apache.felix.scr.annotations.{ Activate, Component, Deactivate, Property, Reference }
 import org.osgi.service.component.ComponentContext
 import org.slf4j.{ Logger, LoggerFactory }
 
 import akka.actor.ActorSystem
-import akka.http.Http
-import akka.http.Http.ServerBinding
-import akka.http.marshallers.xml.ScalaXmlSupport.defaultNodeSeqMarshaller
-import akka.http.marshalling.ToResponseMarshallable.apply
-import akka.http.server.Directive.{ addByNameNullaryApply, addDirectiveApply }
-import akka.http.server.Directives.{ HttpBasicAuthentication, complete, enhanceRouteWithConcatenation, get, path, segmentStringToPathMatcher }
-import akka.http.server.RouteResult.route2HandlerFlow
-import akka.http.server.directives.AuthenticationDirectives.{ HttpBasicAuthenticator, UserCredentials }
-import akka.stream.ActorFlowMaterializer
-import akka.stream.scaladsl.MaterializedMap
+import akka.http.scaladsl.Http
+import akka.http.scaladsl.Http.ServerBinding
+import akka.http.scaladsl.marshallers.xml.ScalaXmlSupport.defaultNodeSeqMarshaller
+import akka.http.scaladsl.marshalling.ToResponseMarshallable.apply
+import akka.http.scaladsl.server.Directive.{ addByNameNullaryApply, addDirectiveApply }
+import akka.http.scaladsl.server.Directives.{ authenticateBasicPF, complete, enhanceRouteWithConcatenation, get, logRequestResult, path, segmentStringToPathMatcher }
+import akka.http.scaladsl.server.RouteResult.route2HandlerFlow
+import akka.http.scaladsl.server.directives.LoggingMagnet.forRequestResponseFromMarker
+import akka.http.scaladsl.server.directives.SecurityDirectives.AuthenticatorPF
+import akka.http.scaladsl.server.directives.UserCredentials
+import akka.stream.ActorMaterializer
 
 @Component(metatype = false, specVersion = "1.2")
 class TinyServer {
@@ -27,8 +30,7 @@ class TinyServer {
   @Property(name = "port", description = "Http port", intValue = Array(8080))
   val PORT_CONFIG = "port"
 
-  var binding: Option[ServerBinding] = None
-  var mm: Option[MaterializedMap] = None
+  var binding: Option[Future[ServerBinding]] = None
 
   @Activate
   def activate(context: ComponentContext) {
@@ -48,37 +50,35 @@ class TinyServer {
     import system.dispatcher
     //TODO check this
     implicit val actorSystem = system
-    implicit val materializer = ActorFlowMaterializer()
+    implicit val materializer = ActorMaterializer()
 
-    import akka.http.server.Directives._
+    def auth: AuthenticatorPF[String] = {
+      case p @ UserCredentials.Provided(name) if p.verifySecret(name + "-password") ⇒ name
+    }
 
-    def auth =
-      HttpBasicAuthenticator.provideUserName {
-        case p @ UserCredentials.Provided(name) ⇒ p.verifySecret(name + "-password")
-        case _                                  ⇒ false
-      }
-
-    val http = Http().bind(interface = "localhost", port = port)
-    binding = Some(http)
-    val materializedMap = http startHandlingWith {
-      get {
-        path("") {
-          complete(index)
-        } ~
-          path("secure") {
-            HttpBasicAuthentication("My very secure site")(auth) { user ⇒
-              complete(<html><body>Hello <b>{ user }</b>. Access has been granted!</body></html>)
+    val routes = {
+      logRequestResult("akka-http-microservice") {
+        get {
+          path("") {
+            complete(index)
+          } ~
+            path("secure") {
+              authenticateBasicPF("My very secure site", auth) { user ⇒
+                complete(<html><body>Hello <b>{ user }</b>. Access has been granted!</body></html>)
+              }
+            } ~
+            path("ping") {
+              complete("PONG!")
+            } ~
+            path("crash") {
+              complete(sys.error("BOOM!"))
             }
-          } ~
-          path("ping") {
-            complete("PONG!")
-          } ~
-          path("crash") {
-            complete(sys.error("BOOM!"))
-          }
+        }
       }
     }
-    mm = Some(materializedMap)
+
+    val http = Http().bindAndHandle(routes, "localhost", port)
+    binding = Some(http)
     log.info("server online at localhost:{}", port)
   }
 
@@ -99,10 +99,9 @@ class TinyServer {
   def deactivate(context: ComponentContext) = {
     import system.dispatcher
     for (
-      b ← binding;
-      m ← mm
+      b ← binding
     ) {
-      b.unbind(m).onComplete(_ ⇒ log.info("server is down."))
+      b.flatMap(_.unbind()).onComplete(_ ⇒ log.info("server is down."))
     }
     log.info("#deactivate");
   }
