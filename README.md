@@ -52,11 +52,13 @@ start http://repo2.maven.org/maven2/org/apache/felix/org.apache.felix.scr/1.8.2/
 start http://repo2.maven.org/maven2/org/apache/felix/org.apache.felix.webconsole.plugins.event/1.1.2/org.apache.felix.webconsole.plugins.event-1.1.2.jar
 
 # sling installer: bundle & property auto-install under '/install' folder
+# (first create the conf/system.properties file with the following entry 'sling.fileinstall.dir=install')
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.core/3.6.6/org.apache.sling.installer.core-3.6.6.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.factory.configuration/1.1.2/org.apache.sling.installer.factory.configuration-1.1.2.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.launchpad.api/1.2.0/org.apache.sling.launchpad.api-1.2.0.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.settings/1.3.6/org.apache.sling.settings-1.3.6.jar
-start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.provider.file/1.1.0/org.apache.sling.installer.provider.file-1.1.0.jar
+# org.apache.sling.installer.provider.file-1.1.0 is broken, see SLING-4478
+start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.provider.file/1.0.4/org.apache.sling.installer.provider.file-1.0.4.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.launchpad.installer/1.2.2/org.apache.sling.launchpad.installer-1.2.2.jar
 
 # scala
