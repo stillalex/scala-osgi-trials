@@ -2,7 +2,7 @@
 Tiny Oak Launcher
 =================
 
-A simple demo launchpad for [tiny-oak](/tiny-oak). Just build the 2 project and you get a runnable jar 
+A simple demo launchpad for [tiny-oak](/tiny-oak). Just build the 2 projects and you get a runnable jar 
 that contains the entire package.
 
 ```bash
