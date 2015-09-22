@@ -114,13 +114,13 @@
         <dependency>
             <groupId>com.pfalabs</groupId>
             <artifactId>com.pfalabs.soak_2.11</artifactId>
-            <version>0.0.3</version>
+            <version>0.0.4</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.jackrabbit</groupId>
             <artifactId>oak-core</artifactId>
-            <version>1.3.4</version>
+            <version>1.3.5</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

@@ -2,6 +2,12 @@
 Tiny Oak
 =========
 
+Build with Scala ```2.11.x``` and [Oak](https://jackrabbit.apache.org/oak/) ```1.3.x```
+
+[![Oak 1.3.5](https://img.shields.io/badge/Oak-1.3.5-green.svg)](https://jackrabbit.apache.org/oak)
+[![soak 0.0.4](https://img.shields.io/badge/soak-0.0.4-blue.svg)](https://github.com/alexparvulescu/soak)
+[![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
+
 Setup Oak bundles
 -----------------
 
@@ -21,9 +27,9 @@ start http://repo2.maven.org/maven2/com/google/guava/guava/15.0/guava-15.0.jar
 start http://repo2.maven.org/maven2/commons-codec/commons-codec/1.5/commons-codec-1.5.jar
 start http://repo2.maven.org/maven2/commons-io/commons-io/2.4/commons-io-2.4.jar
 
-start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-commons/1.3.4/oak-commons-1.3.4.jar
-start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-blob/1.3.4/oak-blob-1.3.4.jar
-start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-core/1.3.4/oak-core-1.3.4.jar
+start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-commons/1.3.5/oak-commons-1.3.5.jar
+start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-blob/1.3.5/oak-blob-1.3.5.jar
+start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-core/1.3.5/oak-core-1.3.5.jar
 
 # start http://repo2.maven.org/maven2/org/apache/tika/tika-core/1.5/tika-core-1.5.jar
 # start http://repo2.maven.org/maven2/org/apache/jackrabbit/oak-lucene/1.3.4/oak-lucene-1.3.4.jar
@@ -41,7 +47,7 @@ start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.settings/1
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.provider.file/1.0.4/org.apache.sling.installer.provider.file-1.0.4.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.launchpad.installer/1.2.2/org.apache.sling.launchpad.installer-1.2.2.jar
 
-start https://bintray.com/artifact/download/alexparvulescu/pfalabs/com/pfalabs/com.pfalabs.soak_2.11/0.0.3/com.pfalabs.soak_2.11-0.0.3.jar
+start https://bintray.com/artifact/download/alexparvulescu/pfalabs/com/pfalabs/com.pfalabs.soak_2.11/0.0.4/com.pfalabs.soak_2.11-0.0.4.jar
 
 ```
 

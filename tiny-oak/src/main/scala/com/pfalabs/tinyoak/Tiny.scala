@@ -26,7 +26,7 @@ class Tiny extends Filter {
 
   val log: Logger = LoggerFactory.getLogger(classOf[Tiny])
 
-  @Reference(policy = STATIC, policyOption = GREEDY)
+  @Reference
   val repo: ContentRepository = null
 
   // -------- Filter -----
@@ -44,7 +44,6 @@ class Tiny extends Filter {
     val sc = new SimpleCredentials("admin", "admin".toCharArray())
     sc.setAttribute(".token", "")
 
-    //TODO logout all of the following
     val closer = Closer.create
     try {
       val cs = repo.login(sc, null)
