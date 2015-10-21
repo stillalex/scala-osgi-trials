@@ -66,10 +66,10 @@
     <repositories>
         <!-- resolve soak dependency -->
         <repository>
-            <id>bintray-alexparvulescu-pfalabs</id>
+            <id>bintray-pfalabs-maven</id>
             <name>bintray</name>
             <layout>default</layout>
-            <url>http://dl.bintray.com/alexparvulescu/pfalabs</url>
+            <url>http://dl.bintray.com/pfalabs/maven</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>

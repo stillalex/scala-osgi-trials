@@ -5,7 +5,7 @@ Tiny Oak
 Build with Scala ```2.11.x``` and [Oak](https://jackrabbit.apache.org/oak/) ```1.3.x```
 
 [![Oak 1.3.5](https://img.shields.io/badge/Oak-1.3.5-green.svg)](https://jackrabbit.apache.org/oak)
-[![soak 0.0.4](https://img.shields.io/badge/soak-0.0.4-blue.svg)](https://github.com/alexparvulescu/soak)
+[![soak 0.0.5](https://img.shields.io/badge/soak-0.0.5-blue.svg)](https://github.com/alexparvulescu/soak)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 Setup Oak bundles
@@ -47,7 +47,7 @@ start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.settings/1
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.provider.file/1.0.4/org.apache.sling.installer.provider.file-1.0.4.jar
 start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.launchpad.installer/1.2.2/org.apache.sling.launchpad.installer-1.2.2.jar
 
-start https://bintray.com/artifact/download/alexparvulescu/pfalabs/com/pfalabs/com.pfalabs.soak_2.11/0.0.4/com.pfalabs.soak_2.11-0.0.4.jar
+start https://bintray.com/artifact/download/pfalabs/maven/com/pfalabs/com.pfalabs.soak_2.11/0.0.5/com.pfalabs.soak_2.11-0.0.5.jar
 
 ```
 

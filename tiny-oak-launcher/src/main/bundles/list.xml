@@ -219,7 +219,7 @@
             <groupId>com.pfalabs</groupId>
             <artifactId>com.pfalabs.soak_2.11
             </artifactId>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
         </bundle>
 
         <bundle>

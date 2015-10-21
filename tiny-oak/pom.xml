@@ -114,7 +114,7 @@
         <dependency>
             <groupId>com.pfalabs</groupId>
             <artifactId>com.pfalabs.soak_2.11</artifactId>
-            <version>0.0.4</version>
+            <version>0.0.5</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -133,10 +133,10 @@
     <repositories>
         <!-- resolve soak dependency -->
         <repository>
-            <id>bintray-alexparvulescu-pfalabs</id>
+            <id>bintray-pfalabs-maven</id>
             <name>bintray</name>
             <layout>default</layout>
-            <url>http://dl.bintray.com/alexparvulescu/pfalabs</url>
+            <url>http://dl.bintray.com/pfalabs/maven</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
