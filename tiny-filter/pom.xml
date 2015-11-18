@@ -9,7 +9,7 @@
         <maven.compiler.source>1.7</maven.compiler.source>
         <maven.compiler.target>1.7</maven.compiler.target>
         <encoding>UTF-8</encoding>
-        <scala.version>2.11.0</scala.version>
+        <scala.version>2.11.5</scala.version>
     </properties>
     <build>
         <sourceDirectory>src/main/scala</sourceDirectory>
@@ -52,14 +52,13 @@
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>!org.apache.felix.scr.annotations.*,*</Import-Package>
                     </instructions>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
-                <version>1.15.0</version>
+                <version>1.21.0</version>
                 <configuration>
                     <scanClasses>true</scanClasses>
                 </configuration>

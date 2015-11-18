@@ -7,12 +7,17 @@ import org.apache.felix.scr.annotations.Property
 import com.pfalabs.tinyfilter.service.TinyService
 import org.apache.felix.scr.annotations.Reference
 
-@Component(immediate = true, metatype = false, specVersion = "1.2")
+@Component(immediate = true, specVersion = "1.2")
 @Service(value = Array(classOf[Filter]))
-@Properties(Array(new Property(name = "pattern", value = Array("/tiny"))))
-class Tiny extends Filter {
+@Properties(Array(
+  new Property(name = "osgi.http.whiteboard.context.name", value = Array("org.osgi.service.http")),
+//  new Property(name = "osgi.http.whiteboard.filter.dispatcher", value = Array("REQUEST")),
+  new Property(name = "osgi.http.whiteboard.filter.pattern", value = Array("/tf2")),
+  new Property(name = "osgi.http.whiteboard.filter.name", value = Array("TinyFilter2"))
+))
+class TinyFilter2 extends Filter {
 
-  val log: Logger = LoggerFactory.getLogger(classOf[Tiny]);
+  val log: Logger = LoggerFactory.getLogger(classOf[TinyFilter2]);
 
   @Reference
   val tiny: TinyService = null;

@@ -1,0 +1,69 @@
+[feature name=:boot]
+
+[artifacts]
+
+  org.slf4j/slf4j-api/1.7.6
+  org.apache.sling/org.apache.sling.commons.log/4.0.6
+  org.apache.sling/org.apache.sling.commons.logservice/1.0.6
+
+  org.apache.sling/org.apache.sling.fragment.xml/1.0.2
+#  org.apache.felix/org.apache.felix.configadmin/1.8.8
+  org.apache.felix/org.apache.felix.configadmin/1.8.6
+  org.apache.felix/org.apache.felix.eventadmin/1.4.4
+  org.apache.felix/org.apache.felix.scr/2.0.2
+#  org.apache.felix/org.apache.felix.scr/1.8.2
+  org.apache.felix/org.apache.felix.metatype/1.1.2
+
+  org.apache.sling/org.apache.sling.settings/1.3.6
+  org.apache.sling/org.apache.sling.installer.core/3.6.6
+  org.apache.sling/org.apache.sling.launchpad.installer/1.2.2
+  org.apache.sling/org.apache.sling.installer.provider.file/1.1.0
+  org.apache.sling/org.apache.sling.installer.factory.configuration/1.1.2
+
+  org.apache.felix/org.apache.felix.http.api/3.0.0
+  org.apache.felix/org.apache.felix.http.jetty/3.1.2
+  org.apache.felix/org.apache.felix.http.servlet-api/1.1.2
+  org.apache.felix/org.apache.felix.http.whiteboard/3.0.0
+
+  org.apache.felix/org.apache.felix.inventory/1.0.4
+  org.apache.felix/org.apache.felix.webconsole/4.2.10
+  org.apache.felix/org.apache.felix.webconsole.plugins.event/1.1.2
+  org.apache.felix/org.apache.felix.webconsole.plugins.memoryusage/1.0.6
+  org.apache.felix/org.apache.felix.webconsole.plugins.ds/2.0.2
+  commons-io/commons-io/2.4
+  commons-fileupload/commons-fileupload/1.3.1
+  org.apache.commons/commons-lang3/3.3.2
+  joda-time/joda-time/2.8.2
+  org.apache.geronimo.bundles/json/20090211_1
+
+[settings]
+
+  sling.ignoreSystemProperties=true
+  sling.fileinstall.dir=${sling.home}/install
+  sling.fileinstall.writeback=false
+  org.osgi.framework.system.packages.extra=javax.activation,sun.misc
+  org.osgi.service.http.port=8080
+
+[configurations]
+
+  org.apache.sling.commons.log.LogManager
+    org.apache.sling.commons.log.pattern="{0,date,dd.MM.yyyy\ HH:mm:ss.SSS}\ *{4}*\ [{2}]\ {3}\ {5}"
+    org.apache.sling.commons.log.file="logs/error.log"
+    org.apache.sling.commons.log.level="info"
+    org.apache.sling.commons.log.file.size="'.'yyyy-MM-dd"
+    org.apache.sling.commons.log.file.number=I"7"
+    org.apache.sling.commons.log.numOfLines=I"10000"
+
+[feature name=:launchpad]
+
+[artifacts]
+
+  org.apache.sling/org.apache.sling.launchpad.base/5.2.0-2.6.4
+
+[feature name=launcher]
+
+[artifacts]
+
+  org.scala-lang/scala-library/2.11.5
+  com.pfalabs.scala-osgi-trials/com.pfalabs.scala-osgi-trials.tinyfilter_2.11/0.0.1-SNAPSHOT
+
