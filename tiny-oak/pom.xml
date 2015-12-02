@@ -47,30 +47,36 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.7</version>
+                <version>3.0.1</version>
                 <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
-                        <Import-Package>!org.apache.felix.scr.annotations.*,*</Import-Package>
-                    </instructions>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-scr-plugin</artifactId>
-                <version>1.15.0</version>
-                <configuration>
-                    <scanClasses>true</scanClasses>
-                </configuration>
                 <executions>
                     <execution>
-                        <id>generate-scr-scrdescriptor</id>
                         <goals>
-                            <goal>scr</goal>
+                            <goal>bundle</goal>
                         </goals>
+                        <configuration>
+                            <instructions>
+                                <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                                <_dsannotations>*</_dsannotations>
+                                <_dsannotations-inherit>true</_dsannotations-inherit>
+                                <_metatypeannotations>*</_metatypeannotations>
+                                <_plugin>org.apache.felix.scrplugin.ds.DSAnnotationProcessor;destdir=target/classes</_plugin>
+                            </instructions>
+                        </configuration>
                     </execution>
                 </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.felix</groupId>
+                        <artifactId>org.apache.felix.scr.ds-annotations</artifactId>
+                        <version>1.2.8</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.felix</groupId>
+                        <artifactId>org.apache.felix.scr.generator</artifactId>
+                        <version>1.13.0</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -89,32 +95,26 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>osgi.cmpn</artifactId>
+            <version>6.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
             <artifactId>org.osgi.core</artifactId>
-            <version>4.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.compendium</artifactId>
-            <version>4.3.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.felix</groupId>
-            <artifactId>org.apache.felix.scr.annotations</artifactId>
-            <version>1.9.6</version>
+            <version>5.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.pfalabs</groupId>
             <artifactId>com.pfalabs.soak_2.11</artifactId>
-            <version>0.0.5</version>
+            <version>0.0.6-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

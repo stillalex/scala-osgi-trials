@@ -1,9 +1,7 @@
 package com.pfalabs.tinyoak
 
-import org.apache.felix.scr.annotations.Activate
-import org.apache.felix.scr.annotations.Component
-import org.apache.felix.scr.annotations.Deactivate
 import org.osgi.service.component.ComponentContext
+import org.osgi.service.component.annotations.{ Activate, Component, Deactivate }
 
 import com.pfalabs.soak.osgi.OakService
 
