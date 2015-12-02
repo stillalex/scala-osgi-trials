@@ -1,32 +1,50 @@
 package com.pfalabs.tinyfilter
 
-import org.apache.felix.scr.annotations.{ Component, Properties, Service }
+import org.osgi.service.component.annotations.{ Component, Reference }
 import org.slf4j.{ Logger, LoggerFactory }
-import javax.servlet.{ Filter, FilterChain, FilterConfig, ServletRequest, ServletResponse }
-import org.apache.felix.scr.annotations.Property
-import com.pfalabs.tinyfilter.service.TinyService
-import org.apache.felix.scr.annotations.Reference
 
-@Component(immediate = true, metatype = false, specVersion = "1.2")
-@Service(value = Array(classOf[Filter]))
-@Properties(Array(new Property(name = "pattern", value = Array("/tiny"))))
+import com.pfalabs.tinyfilter.service.TinyService
+
+import javax.servlet.{ Filter, FilterChain, FilterConfig, ServletRequest, ServletResponse }
+
+@Component(service = Array(classOf[Filter]), immediate = true, property = {
+  Array("osgi.http.whiteboard.filter.pattern=/tiny",
+    "osgi.http.whiteboard.filter.asyncSupported=true",
+    "osgi.http.whiteboard.context.select=(osgi.http.whiteboard.context.name=org.osgi.service.http)")
+})
 class Tiny extends Filter {
 
-  val log: Logger = LoggerFactory.getLogger(classOf[Tiny]);
+  val log: Logger = LoggerFactory.getLogger(classOf[Tiny])
 
-  @Reference
-  val tiny: TinyService = null;
+  var tiny: Option[TinyService] = None
 
   // -------- Filter -----
 
-  override def init(config: FilterConfig) = log.info("Init with config [{}]", config);
+  override def init(config: FilterConfig) = log.info(s"#init $tiny")
 
-  override def destroy() = log.info("Destroyed filter");
+  override def destroy() = log.info("#destroy")
 
   override def doFilter(req: ServletRequest, res: ServletResponse, chain: FilterChain) {
-    res.setContentType("text/plain");
-    val out = res.getWriter();
-    out.println("Request = " + req);
-    out.println("Service = " + tiny.doSomething);
+    res.setContentType("text/plain")
+    val out = res.getWriter()
+    out.println("Request = " + req)
+    out.println("Service = " + tiny.map(_.doSomething).getOrElse("No Service Available!"))
   }
+
+  @Reference
+  def setService(t: TinyService) {
+    log.info(s"#setService $t")
+    tiny = Some(t)
+  }
+
+  def unsetService(t: TinyService) {
+    log.info(s"#unsetService $t")
+    tiny = None
+  }
+
+  def updatedService(ref: Map[String, _]) {
+    //TODO
+    log.info(s"#updatedService $ref")
+  }
+
 }
