@@ -17,7 +17,7 @@ java -jar target/com.pfalabs.scala-osgi-trials.tinyakkahttp-launcher-0.0.1-SNAPS
 
 Navigate to [localhost:8080](http://localhost:8080)
 
-Felix Web Console runs on  to [localhost:8090](http://localhost:8090), as the akka http is not a servlet based service, so it's not sharing the same global servlet context.
+Felix Web Console runs on  to [localhost:8090/system/console](http://localhost:8090/system/console), as the akka http example is not a servlet based service, so it's not sharing the same global servlet context.
 
 
 
