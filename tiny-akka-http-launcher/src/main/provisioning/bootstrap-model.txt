@@ -79,7 +79,7 @@
 [configurations]
 
   com.pfalabs.tinyakkahttp.service.impl.TinyServer
-    port=I"8070"
+    port=I"8080"
 
 [artifacts]
 
