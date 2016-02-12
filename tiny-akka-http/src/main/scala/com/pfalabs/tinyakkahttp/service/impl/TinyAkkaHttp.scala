@@ -1,14 +1,14 @@
 package com.pfalabs.tinyakkahttp.service.impl
 
-import org.apache.felix.scr.annotations.{ Activate, Component, Deactivate }
 import org.osgi.framework.BundleContext
 import org.osgi.service.component.ComponentContext
+import org.osgi.service.component.annotations.{ Activate, Component, Deactivate }
 import org.slf4j.{ Logger, LoggerFactory }
 
 import akka.actor.ActorSystem
 import akka.osgi.ActorSystemActivator
 
-@Component(metatype = false, specVersion = "1.1")
+@Component
 class TinyAkkaHttp extends ActorSystemActivator {
 
   val log: Logger = LoggerFactory.getLogger(classOf[TinyAkkaHttp]);

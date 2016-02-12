@@ -2,8 +2,8 @@ package com.pfalabs.tinyakkahttp.service.impl
 
 import scala.concurrent.Future
 
-import org.apache.felix.scr.annotations.{ Activate, Component, Deactivate, Property, Reference }
 import org.osgi.service.component.ComponentContext
+import org.osgi.service.component.annotations.{ Activate, Component, Deactivate, Reference }
 import org.slf4j.{ Logger, LoggerFactory }
 
 import akka.actor.ActorSystem
@@ -19,16 +19,14 @@ import akka.http.scaladsl.server.directives.SecurityDirectives.AuthenticatorPF
 import akka.http.scaladsl.server.directives.UserCredentials
 import akka.stream.ActorMaterializer
 
-@Component(metatype = false, specVersion = "1.2")
+@Component
 class TinyServer {
 
   val log: Logger = LoggerFactory.getLogger(classOf[TinyServer]);
+  val PORT_CONFIG = "port"
 
   @Reference
-  val system: ActorSystem = null
-
-  @Property(name = "port", description = "Http port", intValue = Array(8080))
-  val PORT_CONFIG = "port"
+  var system: ActorSystem = null
 
   var binding: Option[Future[ServerBinding]] = None
 
@@ -47,9 +45,9 @@ class TinyServer {
 
   def startHttp(port: Int) {
 
-    import system.dispatcher
     //TODO check this
     implicit val actorSystem = system
+    import actorSystem.dispatcher
     implicit val materializer = ActorMaterializer()
 
     def auth: AuthenticatorPF[String] = {
@@ -97,7 +95,8 @@ class TinyServer {
 
   @Deactivate
   def deactivate(context: ComponentContext) = {
-    import system.dispatcher
+    implicit val actorSystem = system
+    import actorSystem.dispatcher
     for (
       b ← binding
     ) {
