@@ -15,7 +15,7 @@
             <plugin>
                 <groupId>org.apache.sling</groupId>
                 <artifactId>slingstart-maven-plugin</artifactId>
-                <version>1.3.6</version>
+                <version>1.4.4</version>
                 <extensions>true</extensions>
                 <configuration>
                     <createWebapp>false</createWebapp>

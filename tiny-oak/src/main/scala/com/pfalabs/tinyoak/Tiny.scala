@@ -1,6 +1,7 @@
 package com.pfalabs.tinyoak
 
 import org.apache.jackrabbit.oak.api.ContentRepository
+
 import org.osgi.service.component.annotations.{ Component, Reference }
 import org.slf4j.{ Logger, LoggerFactory }
 
@@ -8,6 +9,7 @@ import com.google.common.io.Closer
 
 import javax.jcr.SimpleCredentials
 import javax.servlet.{ Filter, FilterChain, FilterConfig, ServletRequest, ServletResponse }
+import org.apache.jackrabbit.api.security.authentication.token.TokenCredentials
 
 @Component(service = Array(classOf[Filter]), immediate = true, property = {
   Array("osgi.http.whiteboard.filter.pattern=/tinyoak",
@@ -47,11 +49,10 @@ class Tiny extends Filter {
           out.println("AuthInfo = " + cs.getAuthInfo())
           out.println("token = " + sc.getAttribute(".token"))
 
-        // TODO token generation is broken
-        //      val token = new TokenCredentials(sc.getAttribute(".token").toString())
-        //      val tokenSession = repo.login(token, null)
-        //      closer.register(tokenSession)
-        //      out.println("Token Session = " + tokenSession)
+          val token = new TokenCredentials(sc.getAttribute(".token").toString())
+          val tokenSession = r.login(token, null)
+          closer.register(tokenSession)
+          out.println("Token Session = " + tokenSession)
       }
     } finally {
       closer.close()
