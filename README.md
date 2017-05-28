@@ -4,6 +4,18 @@ Scala OSGi Trials
 
 Different tests with [Scala](https://www.scala-lang.org/) and OSGi on [Apache Felix](https://felix.apache.org).
 
+
+Sub-projects
+------------
+
+  - [filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
+  - [filter launcher](/tiny-filter-launcher) a demo launchpad for [filter](/tiny-filter).
+  - [oak](/tiny-oak) an interesting experiment with [Apache Oak](http://jackrabbit.apache.org/oak).
+  - [oak launcher](/tiny-oak-launcher) a demo launchpad for [oak](/tiny-oak).
+  - [akka http](/tiny-akka-http) an example of a basic Akka Http based app.
+  - [akka http launcher](/tiny-akka-http-launcher) a demo launchpad for [akka http](/tiny-akka-http).
+
+
 Getting Started
 ---------------
 
@@ -59,14 +71,6 @@ start http://repo2.maven.org/maven2/org/apache/sling/org.apache.sling.installer.
 start http://repo2.maven.org/maven2/org/scala-lang/scala-library/2.12.2/scala-library-2.12.2.jar
 
 ```
-
-Sub-projects
-------------
-
-  - [tiny-filter](/tiny-filter) an example of an http filter exposing a basic service built with Scala.
-  - [tiny-akka-http](/tiny-akka-http) an example of a basic Akka Http based app.
-  - [tiny-akka-http-launcher](/tiny-akka-http-launcher) a demo launchpad for [tiny-akka-http](/tiny-akka-http).
-  - [tiny-oak](/tiny-oak) an interesting experiment with [Apache Oak](http://jackrabbit.apache.org/oak).
 
 License
 -------
