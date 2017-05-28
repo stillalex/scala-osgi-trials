@@ -42,9 +42,9 @@ class Tiny extends Filter {
     tiny = None
   }
 
-  def updatedService(ref: Map[String, _]) {
-    //TODO
-    log.info(s"#updatedService $ref")
-  }
+  //TODO
+  //  def updatedService(ref: Map[String, _]) {
+  //    log.info(s"#updatedService $ref")
+  //  }
 
 }

@@ -2,12 +2,13 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.pfalabs.scala-osgi-trials</groupId>
-    <artifactId>scala-osgi-trials-parent_2.11</artifactId>
+    <artifactId>scala-osgi-trials-parent_2.12</artifactId>
     <name>Scala Osgi Trials Parent</name>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>tiny-filter</module>
+        <module>tiny-filter-launcher</module>
         <module>tiny-akka-http</module>
         <module>tiny-akka-http-launcher</module>
         <module>tiny-oak</module>
