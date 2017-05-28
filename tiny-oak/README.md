@@ -2,10 +2,11 @@
 Tiny Oak
 =========
 
-Build with Scala ```2.11.x``` and [Oak](https://jackrabbit.apache.org/oak/) ```1.5.x```
+Built on [Scala](https://www.scala-lang.org/) ```2.12.2``` and [Oak](https://jackrabbit.apache.org/oak/) ```1.6.x```
 
-[![Oak 1.5.5](https://img.shields.io/badge/Oak-1.5.5-green.svg)](https://jackrabbit.apache.org/oak)
-[![soak 0.0.5](https://img.shields.io/badge/soak-0.0.7-blue.svg)](https://github.com/alexparvulescu/soak)
+[![Scala 2.12](https://img.shields.io/badge/Scala-2.12-red.svg)](https://www.scala-lang.org/)
+[![Oak 1.6.1](https://img.shields.io/badge/Oak-1.6.1-green.svg)](https://jackrabbit.apache.org/oak/)
+[![Soak 0.0.8](https://img.shields.io/badge/soak-0.0.8-blue.svg)](https://github.com/stillalex/soak)
 [![License](http://img.shields.io/:license-Apache%202-red.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 
 Setup Oak bundles
