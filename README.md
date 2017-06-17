@@ -72,6 +72,8 @@ start http://repo2.maven.org/maven2/org/scala-lang/scala-library/2.12.2/scala-li
 
 ```
 
+Then the WebConsole is available at http://localhost:8080/system/console/bundles (u/p: admin/admin)
+
 License
 -------
 
